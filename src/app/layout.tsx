@@ -1,8 +1,9 @@
-"use client";
+import { Inter } from "@next/font/google";
 
-import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
-import GlobalStyles from "@/styles/globalStyle";
-import StyledComponentsRegistry from "./registry";
+// import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
+import "../styles/app.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -10,14 +11,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      className={inter.className}
+      lang="en"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "32px",
+        gap: 32,
+        minHeight: "100vh",
+        position: "relative",
+      }}
+    >
       <head />
-      <StyledComponentsRegistry>
-        <EthereumWalletProvider>
-          <GlobalStyles />
-          <body>{children}</body>
-        </EthereumWalletProvider>
-      </StyledComponentsRegistry>
+      <body
+        style={{
+          background: "#eff1f8",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "32 0",
+          gap: 32,
+          width: "100%",
+          minHeight: "100vh",
+          position: "relative",
+        }}
+      >
+        {children}
+      </body>
     </html>
   );
 }

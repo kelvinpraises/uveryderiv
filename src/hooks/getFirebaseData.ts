@@ -18,7 +18,6 @@ export async function useFeaturedGuilds() {
   const data = docSnap.data();
 
   if (docSnap.exists()) {
-    console.log(data?.quickInfo);
     return data?.quickInfo as FeaturedGuilds[];
   } else {
     // doc.data() will be undefined in this case

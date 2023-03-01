@@ -1,21 +1,6 @@
-import { NextResponse } from "next/server";
-
 import CreateScrap from "@/components/buttons/CreateScrap";
 import ScrapTownCard from "@/components/cards/ScrapTownCard";
 import { RowPanel } from "@/components/Panel";
-
-export function middleware(request: Request) {
-  // Store current request url in a custom header, which you can read later
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-url", request.url);
-
-  return NextResponse.next({
-    request: {
-      // Apply new request headers
-      headers: requestHeaders,
-    },
-  });
-}
 
 export default function Home() {
   return (

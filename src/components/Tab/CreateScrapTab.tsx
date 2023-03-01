@@ -7,7 +7,9 @@ import {
   ChevronUpIcon,
   Cross2Icon,
 } from "@radix-ui/react-icons";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { relative } from "path";
 import React, { useState } from "react";
 import { styled } from "styled-components";
 
@@ -164,8 +166,71 @@ export const CreateScrapTab = () => {
       </SAssetSelect>
     </>,
     <SInputsContent>
-      <AssetsAccordion></AssetsAccordion>
-      <SActionButton>Submit</SActionButton>,
+      <SAssetWrapper>
+        <p
+          style={{
+            fontStyle: "normal",
+            fontWeight: 600,
+            fontSize: 18,
+            lineHeight: "28px",
+            color: "#ffffff",
+            marginBottom: "1rem",
+          }}
+        >
+          {title}
+        </p>
+        <p
+          style={{
+            fontStyle: "normal",
+            fontWeight: 400,
+            fontSize: 16,
+            lineHeight: "28px",
+            color: "#ffffff",
+          }}
+        >
+          {description}
+        </p>
+      </SAssetWrapper>
+      <AssetsAccordion>
+        {assetsState.map((a) => {
+          if (a.type === "text") {
+            return (
+              <p
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  fontSize: 16,
+                  lineHeight: "28px",
+                  color: "#ffffff",
+                }}
+              >
+                {a.value}
+              </p>
+            );
+          } else if (a.type === "imageUrl") {
+            return (
+              <div
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  position: "relative",
+                  borderRadius: "4px",
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={a.value}
+                  style={{ objectFit: "cover", zIndex: 0 }}
+                  fill
+                  priority
+                  alt={""}
+                />
+              </div>
+            );
+          }
+        })}
+      </AssetsAccordion>
+      <SActionButton>Submit</SActionButton>
     </SInputsContent>,
   ];
 
@@ -189,8 +254,9 @@ export const CreateScrapTab = () => {
           <SCross2Icon />
         </SClose>
         <SSwitchIndicatorContainer>
-          <SSwitchIndicator active={true} />
-          <SSwitchIndicator active={false} />
+          {content.map((_, i) => (
+            <SSwitchIndicator active={i === index ? true : false} />
+          ))}
         </SSwitchIndicatorContainer>
         <SSwitch>
           <SChevronUpIcon onClick={handleBackwardChange} />
@@ -431,7 +497,7 @@ const SAssetWrapper = styled.div`
 const AssetsAccordion = ({ children }: any) => (
   <SAccordionRoot type="single" defaultValue="item-1" collapsible>
     <SAccordionItem value="item-1">
-      <AccordionTrigger>View assets</AccordionTrigger>
+      <AccordionTrigger>Assets Board</AccordionTrigger>
       <AccordionContent>{children}</AccordionContent>
     </SAccordionItem>
   </SAccordionRoot>
@@ -450,7 +516,16 @@ const AccordionTrigger = React.forwardRef(
 const AccordionContent = React.forwardRef(
   ({ children, className, ...props }, forwardedRef) => (
     <SAccordionContent {...props} ref={forwardedRef}>
-      <div style={{ padding: "16px 20px" }}>{children}</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "16px",
+          gap: "16px",
+        }}
+      >
+        {children}
+      </div>
     </SAccordionContent>
   )
 );
@@ -467,13 +542,13 @@ const SAccordionItem = styled(Accordion.Item)`
 
   &:first-child {
     margin-top: 0;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   &:last-child {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 `;
 
@@ -494,7 +569,7 @@ const SAccordionTrigger = styled(Accordion.Trigger)`
 const SAccordionContent = styled(Accordion.Content)`
   overflow: hidden;
   font-size: 15px;
-  background-color: #d9d9d9;
+  background-color: #313337;
 `;
 
 const SAccordionHeader = styled(Accordion.Header)`

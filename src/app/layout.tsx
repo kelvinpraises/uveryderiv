@@ -1,6 +1,6 @@
 import { Inter } from "@next/font/google";
 // import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
-import "../styles/app.css";
+import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

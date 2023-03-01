@@ -1,7 +1,5 @@
-import { ghostCard } from "./GhostCard.css";
-
 const Cards = () => {
-  return <div className={ghostCard}></div>;
+  return <div></div>;
 };
 
 export default Cards;

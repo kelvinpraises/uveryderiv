@@ -1,8 +1,6 @@
-import { scrapTownCard } from "./ScrapTownCard.css";
-
 const ScrapTownCard = () => {
   return (
-    <div className={scrapTownCard}>
+    <div>
       <p>Where are you now?</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et

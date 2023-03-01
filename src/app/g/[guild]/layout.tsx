@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import Cover from "@/components/Cover";
 import NavBar from "@/components/NavBar";
-import { body, linkGroup } from "./layout.css";
 import { headers } from "next/headers";
 
 export default function RootLayout({
@@ -38,7 +37,7 @@ export default function RootLayout({
               />
             </Cover>
             <NavBar>
-              <div className={linkGroup}>
+              <div>
                 <Link passHref={true} href={`/g/dreamy/`}>
                   <p>#Issue</p>
                 </Link>
@@ -55,7 +54,7 @@ export default function RootLayout({
                   <p>Guild</p>
                 </Link>
               </div>
-              <div className={linkGroup}>
+              <div>
                 <Link passHref={true} href={`/admin`}>
                   <p>Admin deck</p>
                 </Link>

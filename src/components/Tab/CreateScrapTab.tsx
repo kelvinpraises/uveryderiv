@@ -1,5 +1,4 @@
-//// @ts-nocheck
-"use client";
+// @ts-nocheck
 
 import * as Accordion from "@radix-ui/react-accordion";
 import {
@@ -33,11 +32,11 @@ export const CreateScrapTab = () => {
 
   const content = [
     <>
-      <SInputs>
-        <SInputsContent>
-          <SInputLabelGroup>
-            <SLabel>Title</SLabel>
-            <SInput
+      <div>
+        <div>
+          <div>
+            <div>Title</div>
+            <input
               type="text"
               value={title}
               autoComplete="off"
@@ -45,10 +44,10 @@ export const CreateScrapTab = () => {
                 setTitle(e.target.value);
               }}
             />
-          </SInputLabelGroup>
-          <SInputLabelGroup>
-            <SLabel>Description</SLabel>
-            <STextarea
+          </div>
+          <div>
+            <div>Description</div>
+            <textarea
               rows={3}
               value={description}
               autoComplete="off"
@@ -56,9 +55,9 @@ export const CreateScrapTab = () => {
                 setDescription(e.target.value);
               }}
             />
-          </SInputLabelGroup>
+          </div>
           {assets.length < 0 && (
-            <SInfo>
+            <div>
               <p
                 style={{
                   width: "25ch",
@@ -72,17 +71,17 @@ export const CreateScrapTab = () => {
               >
                 Add a scrap assets using the asset picker
               </p>
-            </SInfo>
+            </div>
           )}
-          {assets.length > 0 && <SLabel>Assets</SLabel>}
+          {assets.length > 0 && <div>Assets</div>}
           {assets.length > 0 &&
             assets.map((x, i) => {
               if (x.type === "text") {
                 return (
-                  <SAssetWrapper>
-                    <SInputLabelGroup>
-                      <SLabel>Text</SLabel>
-                      <STextarea
+                  <div>
+                    <div>
+                      <div>Text</div>
+                      <textarea
                         rows={5}
                         value={assetsState[i]?.value || ""}
                         autoComplete="off"
@@ -97,15 +96,15 @@ export const CreateScrapTab = () => {
                           });
                         }}
                       />
-                    </SInputLabelGroup>
-                  </SAssetWrapper>
+                    </div>
+                  </div>
                 );
               } else if (x.type === "imageUrl") {
                 return (
-                  <SAssetWrapper>
-                    <SInputLabelGroup>
-                      <SLabel>Image Url</SLabel>
-                      <SInput
+                  <div>
+                    <div>
+                      <div>Image Url</div>
+                      <input
                         type="text"
                         value={assetsState[i]?.value || ""}
                         autoComplete="off"
@@ -120,23 +119,23 @@ export const CreateScrapTab = () => {
                           });
                         }}
                       />
-                    </SInputLabelGroup>
-                  </SAssetWrapper>
+                    </div>
+                  </div>
                 );
               }
             })}
-          <SActionButton
+          <button
             onClick={() => {
               setIndex((i) => i + 1);
             }}
           >
             Continue
-          </SActionButton>
-        </SInputsContent>
-      </SInputs>
-      <SAssetSelect>
-        <SAssetSelectGroup>
-          <SAssetSelectButton
+          </button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button
             onClick={() => {
               setAssets((x) => {
                 const temp = [...x];
@@ -148,8 +147,8 @@ export const CreateScrapTab = () => {
             }}
           >
             Add scrap text
-          </SAssetSelectButton>
-          <SAssetSelectButton
+          </button>
+          <button
             onClick={() => {
               setAssets((x) => {
                 const temp = [...x];
@@ -161,12 +160,12 @@ export const CreateScrapTab = () => {
             }}
           >
             Add scrap image
-          </SAssetSelectButton>
-        </SAssetSelectGroup>
-      </SAssetSelect>
+          </button>
+        </div>
+      </div>
     </>,
-    <SInputsContent>
-      <SAssetWrapper>
+    <div>
+      <div>
         <p
           style={{
             fontStyle: "normal",
@@ -190,7 +189,7 @@ export const CreateScrapTab = () => {
         >
           {description}
         </p>
-      </SAssetWrapper>
+      </div>
       <AssetsAccordion>
         {assetsState.map((a) => {
           if (a.type === "text") {
@@ -230,292 +229,69 @@ export const CreateScrapTab = () => {
           }
         })}
       </AssetsAccordion>
-      <SActionButton>Submit</SActionButton>
-    </SInputsContent>,
+      <button>Submit</button>
+    </div>,
   ];
 
   const handleForwardChange = () => {
     if (index >= content.length - 1) return;
     setIndex((i) => i + 1);
   };
+  
   const handleBackwardChange = () => {
     if (index <= 0) return;
     setIndex((i) => i - 1);
   };
 
   return (
-    <STab>
-      <SNav>
-        <SClose
+    <div>
+      <div>
+        <div
           onClick={() => {
             router.back();
           }}
         >
-          <SCross2Icon />
-        </SClose>
-        <SSwitchIndicatorContainer>
+          <Cross2Icon />
+        </div>
+        <div>
           {content.map((_, i) => (
-            <SSwitchIndicator active={i === index ? true : false} />
+            <div
+              active={i === index ? true : false}
+            /> /*   width: 10px; height: 10px; background-color: ${({ active }) => (active ? "#D9D9D9" : "#272830")}; border-radius: 10px; */
           ))}
-        </SSwitchIndicatorContainer>
-        <SSwitch>
-          <SChevronUpIcon onClick={handleBackwardChange} />
-          <SChevronDownIcon onClick={handleForwardChange} />
-        </SSwitch>
-      </SNav>
+        </div>
+        <div>
+          <ChevronUpIcon onClick={handleBackwardChange} />
+          <ChevronDownIcon onClick={handleForwardChange} />
+        </div>
+      </div>
       {content[index]}
-    </STab>
+    </div>
   );
 };
 
-const STab = styled.div`
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #0e101b;
-  min-height: 100vh;
-  padding: 32px;
-  gap: 64px;
-`;
-
-const SNav = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0px;
-  gap: 32px;
-  height: 100%;
-`;
-
-const SClose = styled.div`
-  width: 55px;
-  height: 55px;
-  background: #212434;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const SCross2Icon = styled(Cross2Icon)`
-  color: #ffffff;
-`;
-
-const SChevronUpIcon = styled(ChevronUpIcon)`
-  color: #ffffff;
-`;
-
-const SChevronDownIcon = styled(ChevronDownIcon)`
-  color: #ffffff;
-`;
-
-const SSwitchIndicatorContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-`;
-
-const SSwitchIndicator = styled.div<{ active: boolean }>`
-  width: 10px;
-  height: 10px;
-  background-color: ${({ active }) => (active ? "#D9D9D9" : "#272830")};
-  border-radius: 10px;
-`;
-
-const SSwitch = styled.div`
-  width: 55px;
-  height: 100px;
-  background: #212434;
-  border-radius: 30px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 15px;
-  gap: 35px;
-`;
-
-const SInputs = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 32px;
-  padding: 64px 0 0;
-  /* flex-grow: 1; */
-  width: 50%;
-  height: 100%;
-  max-width: 38rem;
-  overflow: scroll;
-`;
-
-const SInputsContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  gap: 32px;
-  width: 100%;
-`;
-
-const SInputLabelGroup = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-`;
-
-const SInput = styled.input`
-  font-size: 1rem;
-  color: #ffffff;
-  background: transparent;
-  border: 1px solid #b7baca;
-  border-radius: 8px;
-  resize: none;
-  outline: none;
-  width: 100%;
-  max-width: 35rem;
-  height: 60px;
-  padding: 10px 8px;
-`;
-
-const STextarea = styled.textarea`
-  font-size: 1rem;
-  color: #ffffff;
-  background: transparent;
-  border: 1px solid #b7baca;
-  border-radius: 8px;
-  /* resize: none; */
-  column-count: auto;
-  outline: none;
-  width: 100%;
-  max-width: 35rem;
-  height: 180px;
-  padding: 10px 8px;
-`;
-
-const SLabel = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-`;
-
-const SInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  gap: 16px;
-  height: 120px;
-  width: 100%;
-  max-width: 35rem;
-  border: 2px dashed #212434;
-  border-radius: 8px;
-`;
-
-const SAssetSelect = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 64px 16px 16px;
-  gap: 16px;
-
-  width: 548.5px;
-  height: 739px;
-`;
-
-const SAssetSelectGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 36px 25px;
-  gap: 23px;
-  background: #212434;
-  border-radius: 16px;
-`;
-
-const SAssetSelectButton = styled.button`
-  all: unset;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  background: #0e101b;
-  border-radius: 8px;
-  font-style: normal;
-  font-weight: 300px;
-  font-size: 13px;
-  line-height: 13px;
-  color: #ffffff;
-  width: 270px;
-  cursor: pointer;
-`;
-
-const SActionButton = styled.button`
-  all: unset;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  background: #ffffff;
-  border-radius: 8px;
-  font-style: normal;
-  font-weight: 300px;
-  font-size: 13px;
-  line-height: 13px;
-  color: #0e101b;
-  width: 100%;
-  cursor: pointer;
-  width: 100%;
-  max-width: 35rem;
-`;
-
-const SAssetWrapper = styled.div`
-  padding: 2rem;
-  background: #000000;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 35rem;
-`;
-
 const AssetsAccordion = ({ children }: any) => (
-  <SAccordionRoot type="single" defaultValue="item-1" collapsible>
-    <SAccordionItem value="item-1">
+  <Accordion.Root type="single" defaultValue="item-1" collapsible>
+    <Accordion.Item value="item-1">
       <AccordionTrigger>Assets Board</AccordionTrigger>
       <AccordionContent>{children}</AccordionContent>
-    </SAccordionItem>
-  </SAccordionRoot>
+    </Accordion.Item>
+  </Accordion.Root>
 );
 
 const AccordionTrigger = React.forwardRef(
   ({ children, className, ...props }, forwardedRef) => (
-    <SAccordionHeader>
-      <SAccordionTrigger {...props} ref={forwardedRef}>
+    <Accordion.Header>
+      <Accordion.Trigger {...props} ref={forwardedRef}>
         {children}
-      </SAccordionTrigger>
-    </SAccordionHeader>
+      </Accordion.Trigger>
+    </Accordion.Header>
   )
 );
 
 const AccordionContent = React.forwardRef(
   ({ children, className, ...props }, forwardedRef) => (
-    <SAccordionContent {...props} ref={forwardedRef}>
+    <Accordion.Content {...props} ref={forwardedRef}>
       <div
         style={{
           display: "flex",
@@ -526,72 +302,6 @@ const AccordionContent = React.forwardRef(
       >
         {children}
       </div>
-    </SAccordionContent>
+    </Accordion.Content>
   )
 );
-
-const SAccordionRoot = styled(Accordion.Root)`
-  border-radius: 6px;
-  width: 100%;
-  max-width: 35rem;
-`;
-
-const SAccordionItem = styled(Accordion.Item)`
-  overflow: hidden;
-  margin-top: 100px;
-
-  &:first-child {
-    margin-top: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-
-  &:last-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
-`;
-
-const SAccordionTrigger = styled(Accordion.Trigger)`
-  font-family: inherit;
-  background-color: transparent;
-  padding: 0 20px;
-  height: 450px;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 15px;
-  line-height: 1;
-  background-color: white;
-`;
-
-const SAccordionContent = styled(Accordion.Content)`
-  overflow: hidden;
-  font-size: 15px;
-  background-color: #313337;
-`;
-
-const SAccordionHeader = styled(Accordion.Header)`
-  display: flex;
-  button,
-  h3 {
-    all: unset;
-  }
-  button {
-    all: unset;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 50px;
-    background: #212434;
-    font-style: normal;
-    font-weight: 300px;
-    font-size: 16px;
-    line-height: 13px;
-    color: #ffffff;
-    width: 100%;
-    padding: 0 16px;
-    cursor: pointer;
-  }
-`;

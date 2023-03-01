@@ -1,10 +1,8 @@
-import { issueCard, issueId, issueInfo } from "./IssueCards.css";
-
 const IssueCards = () => {
   return (
-    <div className={issueCard}>
-      <div className={issueInfo}>
-        <div className={issueId}>
+    <div>
+      <div>
+        <div>
           <p>#Issue 1</p>
         </div>
         <p>Contributed by</p>

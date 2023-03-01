@@ -1,5 +1,4 @@
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import { useEffect, useState } from "react";
 
 import { app } from "@/data/firebase";
 

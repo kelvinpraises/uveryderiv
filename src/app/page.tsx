@@ -5,7 +5,6 @@ import GuildCard from "@/components/cards/GuildCards";
 import Cover from "@/components/Cover";
 import NavBar from "@/components/NavBar";
 import { useFeaturedGuilds } from "@/hooks/getFirebaseData";
-import { buttonGroup, cardGroup, featured, homePage } from "./page.css";
 
 export default async function Home() {
   const featuredGuilds = await useFeaturedGuilds();
@@ -23,15 +22,15 @@ export default async function Home() {
           alt={""}
         />
       </Cover>
-      <div className={featured}>
+      <div>
         <NavBar>
           <p>Featured Guilds</p>
-          <div className={buttonGroup}>
+          <div>
             <p>Connect wallet</p>
             <p>Create guild</p>
           </div>
         </NavBar>
-        <div className={cardGroup}>
+        <div>
           {featuredGuilds?.map((guild) => (
             <GuildCard key={guild.id} {...guild} />
           ))}

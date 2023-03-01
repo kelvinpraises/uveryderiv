@@ -2,13 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FeaturedGuilds } from "@/hooks/getFirebaseData";
-import { guildCard, guildCover, guildDetails, link } from "./GuildCards.css";
 
 const GuildCard = (guild: FeaturedGuilds) => {
   return (
-    <div className={guildCard}>
-      <Link className={link} passHref={true} href={`/g/${guild?.id}`}>
-        <div className={guildCover}>
+    <div>
+      <Link passHref={true} href={`/g/${guild?.id}`}>
+        <div>
           <Image
             src={guild.cover}
             style={{
@@ -22,7 +21,7 @@ const GuildCard = (guild: FeaturedGuilds) => {
           />
         </div>
         v
-        <div className={guildDetails}>
+        <div>
           <p>{guild.name}</p>
           <p>{guild.bio}</p>
         </div>

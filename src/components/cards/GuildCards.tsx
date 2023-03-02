@@ -5,25 +5,24 @@ import { FeaturedGuilds } from "@/hooks/getFirebaseData";
 
 const GuildCard = (guild: FeaturedGuilds) => {
   return (
-    <div>
+    <div className=" flex flex-col bg-white max-w-[13.75rem] h-[18.5rem] mb-2 ">
       <Link passHref={true} href={`/g/${guild?.id}`}>
-        <div>
+        <div className=" relative w-full max-w-[13.75rem] h-28">
           <Image
             src={guild.cover}
             style={{
               objectFit: "cover",
               zIndex: 0,
-              border: "0px solid transparent",
+              borderRadius: "8px 8px 0 0",
             }}
             fill
             priority
             alt={guild.name}
           />
         </div>
-        v
-        <div>
-          <p>{guild.name}</p>
-          <p>{guild.bio}</p>
+        <div className="p-4 bg-white max-h-[12rem] overflow-hidden rounded-r-lg rounded-l-lg">
+          <p className=" text-2xl text-[#494949] font-bebas">{guild.name}</p>
+          <p className=" text-[#545B5E] pt-2">{guild.bio}</p>
         </div>
       </Link>
     </div>

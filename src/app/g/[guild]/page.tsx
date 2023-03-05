@@ -1,11 +1,5 @@
-"use client";
-
-import IssueCards from "@/components/cards/IssueCards";
-import IssuesCards1 from "@/components/cards/IssuesCards1";
 import { ColumnPanel } from "@/components/Panel";
 import { MainIssues } from "@/data/data";
-import Image from "next/image";
-import { useEffect } from "react";
 
 export default function Home() {
   return (

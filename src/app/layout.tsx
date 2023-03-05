@@ -19,8 +19,7 @@ export default function RootLayout({
   return (
     <html className={` ${bebas_neue.variable} ${inter.className}`}>
       <head />
-      <body className="  bg-[#EFF1F8]">
-        <MainNav />
+      <body className="flex justify-center bg-[#EFF1F8]">
         {children}
       </body>
     </html>

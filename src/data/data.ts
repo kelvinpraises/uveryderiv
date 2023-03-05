@@ -138,8 +138,7 @@ export const MainIssues = [
   },
   {
     type: "text",
-    quote:
-      "i wish i was a bird, then i'll fly all my sorrows away.",
+    quote: "i wish i was a bird, then i'll fly all my sorrows away.",
   },
   {
     type: "img",
@@ -181,4 +180,12 @@ export const MainIssues = [
     type: "img",
     src: "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
   },
+];
+
+export const ScrapTownNavRoutes = [
+  { title: "Home", icon: "/Home.svg", url: "/" },
+  { title: "Ideas", icon: "/Rocket.svg", url: "ideas" },
+  { title: "Square", icon: "/Layers.svg", url: "square" },
+  { title: "Archive", icon: "/Archive.svg", url: "archive" },
+  { title: "About", icon: "/Info.svg", url: "about" },
 ];

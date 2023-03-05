@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client";
 
 import * as Accordion from "@radix-ui/react-accordion";
 import {

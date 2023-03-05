@@ -1,19 +1,17 @@
-import Image from "next/image";
-import GhostCard from "@/components/cards/GhostCard";
 import GuildCard from "@/components/cards/GuildCards";
 import Cover from "@/components/Cover";
 import NavBar from "@/components/navBar/NavBar";
+import Image from "next/image";
 // import { useFeaturedGuilds } from "@/hooks/getFirebaseData";
-import { featuredGuilds, PopularIssues } from "@/data/data";
 import PopularCard from "@/components/cards/PopularCard";
 import FAQ from "@/components/FAQ";
+import { featuredGuilds, PopularIssues } from "@/data/data";
 
 export default async function Home() {
   // const featuredGuilds = await useFeaturedGuilds();
 
   return (
     <div className=" pt-[8rem] pb-36 grid place-items-center">
-
       <Cover>
         <Image
           src={
@@ -44,6 +42,7 @@ export default async function Home() {
           ))}
         </div>
       </div>
+      
       <div className=" bg-[#1E1E1E] w-screen flex justify-center px-4">
         <div className="max-w-[1228px] w-full mt-8 mb-[6.7rem]">
           <p className=" text-white text-4xl leading-[43px] font-bebas">

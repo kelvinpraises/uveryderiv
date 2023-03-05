@@ -6,7 +6,7 @@ interface INavBarProp {
 
 const NavBar = ({ children }: INavBarProp) => {
   return (
-    <nav className=" max-w-full flex justify-between items-center">
+    <nav id="nav" className=" max-w-full flex justify-between items-center">
       {children}
     </nav>
   );

@@ -1,77 +1,68 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { ScrapTownNavRoutes } from "@/data/data";
+import { headers } from "next/headers";
+import Link from "next/link";
+import React from "react";
 
-interface INavItem {
-  setActiveNav: Dispatch<SetStateAction<string>>;
-  activeNav: string;
-}
+const ScrapTownNav = () => {
+  const activeNav: any = "Home"; // fix this later
+  const headersList = headers();
+  // read the custom x-url header
+  const header_url = headersList.get("x-url") || "";
+  const { pathname } = new URL(header_url);
+  const pathSplit = pathname?.split("/") || [];
+  const guildId = pathSplit[2];
 
-const ScrapTownNav: React.FC<INavItem> = ({ setActiveNav, activeNav }) => {
   return (
-    <div className=" min-w-40 h-[80vh] rounded-[20px] bg-black flex flex-col py-8 px-4 justify-between">
+    <div className=" sticky top-28 min-w-40 h-[80vh] rounded-[20px] bg-black flex flex-col py-8 px-4 justify-between">
       <div className=" flex flex-col gap-8 ">
-        <div
-          className=" flex gap-2 w-full cursor-pointer"
-          onClick={() => setActiveNav("Home")}
-        >
-          <div
-            className={`${
-              activeNav == "Home" ? "bg-white" : "bg-black"
-            } h-full w-[2px] rounded-full `}
-          />
-          <img src="/Home.svg" alt="" />
-          <p className=" font-semibold text-xl text-white">Home</p>
-        </div>
-        <div
-          className=" flex gap-2 cursor-pointer"
-          onClick={() => setActiveNav("Ideas")}
-        >
-          <div
-            className={`${
-              activeNav == "Ideas" ? "bg-white" : "bg-black"
-            } h-full w-[2px] rounded-full `}
-          />
-          <img src="/Rocket.svg" alt="" />
-          <p className=" font-semibold text-xl text-white">Ideas</p>
-        </div>
-        <div
-          className=" flex gap-2 cursor-pointer"
-          onClick={() => setActiveNav("Square")}
-        >
-          <div
-            className={`${
-              activeNav == "Square" ? "bg-white" : "bg-black"
-            } h-full w-[2px] rounded-full `}
-          />
-          <img src="/Layers.svg" alt="" />
-          <p className=" font-semibold text-xl text-white">Square</p>
-        </div>
-        <div
-          className=" flex gap-2 cursor-pointer"
-          onClick={() => setActiveNav("Archive")}
-        >
-          <div
-            className={`${
-              activeNav == "Archive" ? "bg-white" : "bg-black"
-            } h-full w-[2px] rounded-full `}
-          />
-          <img src="/Archive.svg" alt="" />
-          <p className=" font-semibold text-xl text-white">Archive</p>
-        </div>
+        {ScrapTownNavRoutes.map(({ title, icon, url }) => {
+          if (title !== "About") {
+            return (
+              <ScrapTownNavItem key={title} {...{ guildId, url, activeNav, icon, title }} />
+            );
+          }
+        })}
       </div>
-      <div
-        className=" flex gap-2 cursor-pointer"
-        onClick={() => setActiveNav("About")}
-      >
-        <div
-          className={`${
-            activeNav == "About" ? "bg-white" : "bg-black"
-          } h-full w-[2px] rounded-full `}
-        />
-        <img src="/Info.svg" alt="" />
-        <p className=" font-semibold text-xl text-white">About</p>
-      </div>
+
+      {ScrapTownNavRoutes.map(({ title, icon, url }) => {
+        if (title === "About") {
+          return (
+            <ScrapTownNavItem key={title} {...{ guildId, url, activeNav, icon, title }} />
+          );
+        }
+      })}
     </div>
   );
 };
 
 export default ScrapTownNav;
+
+interface IScrapTownNavItem {
+  guildId: string;
+  url: string;
+  activeNav: string;
+  icon: string;
+  title: string;
+}
+
+const ScrapTownNavItem = ({
+  guildId,
+  url,
+  activeNav,
+  icon,
+  title,
+}: IScrapTownNavItem) => {
+  return (
+    <Link passHref={true} href={`/g/${guildId}/scrap-town/${url}`}>
+      <div className=" flex gap-2 w-full cursor-pointer">
+        <div
+          className={`${
+            activeNav === "Home" ? "bg-white" : "bg-black"
+          } h-full w-[2px] rounded-full `}
+        />
+        <img src={icon} alt="" />
+        <p className=" font-semibold text-xl text-white">{title}</p>
+      </div>
+    </Link>
+  );
+};

@@ -5,7 +5,7 @@ import { FeaturedGuilds } from "@/hooks/getFirebaseData";
 
 const GuildCard = (guild: FeaturedGuilds) => {
   return (
-    <div className=" flex flex-col bg-white max-w-[13.75rem] h-[18.5rem] mb-2 ">
+    <div className=" flex flex-col bg-white max-w-[13.75rem] h-[18.5rem] mb-2 rounded-lg">
       <Link passHref={true} href={`/g/${guild?.id}`}>
         <div className=" relative w-full max-w-[13.75rem] h-28">
           <Image

@@ -126,3 +126,59 @@ export const PopularIssues = [
     id: "001",
   },
 ];
+
+export const MainIssues = [
+  {
+    type: "img",
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY2ODk4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+  {
+    type: "img",
+    src: "https://images.unsplash.com/photo-1524169113253-c6ba17f68498?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY2OTQy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+  {
+    type: "text",
+    quote:
+      "i wish i was a bird, then i'll fly all my sorrows away.",
+  },
+  {
+    type: "img",
+    src: "https://images.unsplash.com/photo-1506259091721-347e791bab0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MDUy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+  {
+    type: "text",
+    quote:
+      "i wish i was a bird, then i'll fly all my sorrows away. i wish i was a bird, then i'll fly all my sorrows away. i wish i was a bird, then i'll fly all my sorrows away.",
+  },
+  {
+    type: "text",
+    quote:
+      "i wish i was a bird, then i'll fly all my sorrows away. i wish i was a bird, then i'll fly all my sorrows away.",
+  },
+  {
+    type: "img",
+    src: "https://images.unsplash.com/photo-1484589065579-248aad0d8b13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTIy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+  {
+    type: "img",
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+  {
+    type: "img",
+    src: "https://images.unsplash.com/photo-1567359781514-3b964e2b04d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjAy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+  {
+    type: "text",
+    quote:
+      "i wish i was a bird, then i'll fly all my sorrows away. i wish i was a bird, then i'll fly all my sorrows away.",
+  },
+  {
+    type: "text",
+    quote:
+      "hey quote here, how awesome is this project? you can also input awebsite or video!",
+  },
+  {
+    type: "img",
+    src: "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  },
+];

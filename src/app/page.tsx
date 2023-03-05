@@ -2,7 +2,7 @@ import Image from "next/image";
 import GhostCard from "@/components/cards/GhostCard";
 import GuildCard from "@/components/cards/GuildCards";
 import Cover from "@/components/Cover";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navBar/NavBar";
 // import { useFeaturedGuilds } from "@/hooks/getFirebaseData";
 import { featuredGuilds, PopularIssues } from "@/data/data";
 import PopularCard from "@/components/cards/PopularCard";
@@ -12,13 +12,17 @@ export default async function Home() {
   // const featuredGuilds = await useFeaturedGuilds();
 
   return (
-    <div className=" bg-[#EFF1F8] pt-8 pb-36 grid place-items-center">
+    <div className=" pt-[8rem] pb-36 grid place-items-center">
+
       <Cover>
         <Image
           src={
-            "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577"
+            "https://images.unsplash.com/photo-1525935944571-4e99237764c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2l0eSxuaWdodHx8fHx8fDE2Nzc4NjY4ODE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
           }
-          style={{ objectFit: "cover", zIndex: 0 }}
+          style={{
+            objectFit: "cover",
+            zIndex: 0,
+          }}
           fill
           priority
           alt={""}
@@ -34,13 +38,13 @@ export default async function Home() {
             Create Guild
           </p>
         </NavBar>
-        <div className=" flex justify-between mt-2 flex-wrap mb-32">
+        <div className=" grid grid-cols-[repeat(auto-fit,13.75rem)] justify-between mt-2 mb-32 gap-4">
           {featuredGuilds?.map((guild) => (
             <GuildCard key={guild.id} {...guild} />
           ))}
         </div>
       </div>
-      <div className=" bg-[#1E1E1E] w-screen flex justify-center ">
+      <div className=" bg-[#1E1E1E] w-screen flex justify-center px-4">
         <div className="max-w-[1228px] w-full mt-8 mb-[6.7rem]">
           <p className=" text-white text-4xl leading-[43px] font-bebas">
             POPULAR ISSUES

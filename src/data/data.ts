@@ -182,10 +182,20 @@ export const MainIssues = [
   },
 ];
 
-export const ScrapTownNavRoutes = [
-  { title: "Home", icon: "/Home.svg", url: "/" },
-  { title: "Ideas", icon: "/Rocket.svg", url: "ideas" },
-  { title: "Square", icon: "/Layers.svg", url: "square" },
-  { title: "Archive", icon: "/Archive.svg", url: "archive" },
-  { title: "About", icon: "/Info.svg", url: "about" },
+export const ScrapTownNavRoutes = {
+  topSection: [
+    { title: "Home", icon: "/Home.svg", url: "/" },
+    { title: "Ideas", icon: "/Rocket.svg", url: "ideas" },
+    { title: "Square", icon: "/Layers.svg", url: "square" },
+    { title: "Archive", icon: "/Archive.svg", url: "archive" },
+  ],
+  bottomSection: [{ title: "About", icon: "/Info.svg", url: "about" }],
+};
+
+export const faqQuestions = [
+  { title: "What is Uveryderiv?", answer: "answer to question" },
+  { title: "So is this an NFT marketplace?", answer: "answer to question" },
+  { title: "Why Uveryderiv?", answer: "answer to question" },
+  { title: "What are Guilds?", answer: "answer to question" },
+  { title: "What are Issues?", answer: "answer to question" },
 ];

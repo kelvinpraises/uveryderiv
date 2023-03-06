@@ -1,12 +1,13 @@
 "use client";
+
 import { useState } from "react";
 
-interface IFAQItem {
+interface FAQItemProp {
   title: string;
   answer: string;
 }
 
-const FAQItems = (FAQ: IFAQItem) => {
+const FAQItem = ({ title, answer }: FAQItemProp) => {
   const [showDescription, setShowDescription] = useState(false);
 
   return (
@@ -15,14 +16,18 @@ const FAQItems = (FAQ: IFAQItem) => {
         className=" flex justify-between items-center font-medium text-2xl cursor-pointer select-none"
         onClick={() => setShowDescription(!showDescription)}
       >
-        <p>{FAQ.title}</p>
+        <p>{title}</p>
         <p className=" text-3xl ">{showDescription ? "-" : "+"}</p>
       </div>
-      <p className={`${showDescription ? " block" : " hidden"} pt-4 text-[#545B5E]`}>
-        {FAQ.answer}
+      <p
+        className={`${
+          showDescription ? " block" : " hidden"
+        } pt-4 text-[#545B5E]`}
+      >
+        {answer}
       </p>
     </div>
   );
 };
 
-export default FAQItems;
+export default FAQItem;

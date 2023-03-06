@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-interface CoverProp {
+interface AvatarProp {
   src: string;
   alt?: string;
 }
 
-const Cover = ({ src, alt = "" }: CoverProp) => {
+const Avatar = ({ src, alt = "" }: AvatarProp) => {
   return (
-    <section className=" relative flex items-center justify-center w-full h-[19rem] rounded-2xl overflow-hidden max-w-[1228px]">
+    <div className="relative flex items-center justify-center w-40 h-40 overflow-hidden rounded-full  mt-[-5rem] z-[1]">
       <Image
         {...{ src, alt }}
         style={{
@@ -17,8 +17,8 @@ const Cover = ({ src, alt = "" }: CoverProp) => {
         fill
         priority
       />
-    </section>
+    </div>
   );
 };
 
-export default Cover;
+export default Avatar;

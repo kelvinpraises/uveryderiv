@@ -16,7 +16,7 @@ const FAQItem = ({ title, answer }: FAQItemProp) => {
         className=" flex justify-between items-center font-medium text-2xl cursor-pointer select-none"
         onClick={() => setShowDescription(!showDescription)}
       >
-        <p>{title}</p>
+        <p className=" font-outfit">{title}</p>
         <p className=" text-3xl ">{showDescription ? "-" : "+"}</p>
       </div>
       <p

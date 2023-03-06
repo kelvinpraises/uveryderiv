@@ -35,13 +35,13 @@ const PopularCard = (issue: IIssue) => {
             <p className=" font-bebas text-[28px] text-[#494949] underline pt-2">
               {issue.issue}
             </p>
-            <p className=" pt-4 text-[#545B5E] font">{issue.description}</p>
+            <p className=" pt-4 text-[#545B5E] font-outfit">{issue.description}</p>
           </div>
           <div className=" flex items-center pt-4 border-t-[1px] border-[#494949]">
             <div className=" bg-black w-10 h-10 rounded-full mr-2"></div>
             <p className=" text-[#545B5E] text-sm">
               An issue of{" "}
-              <span className=" capitalize underline">{issue.name}</span>
+              <span className=" capitalize underline font-outfit">{issue.name}</span>
             </p>
           </div>
         </div>

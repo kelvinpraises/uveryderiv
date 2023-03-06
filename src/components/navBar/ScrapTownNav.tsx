@@ -11,7 +11,7 @@ const ScrapTownNav = () => {
   const guildId = pathname?.split("/")[2] || ""; // FIXME: fragile
 
   return (
-    <div className="sticky top-28 min-w-40 h-[80vh] rounded-[20px] bg-black flex flex-col py-8 px-4 justify-between">
+    <div className=" sticky top-28 h-[80vh] rounded-[20px] bg-[#1E2024] flex flex-col pt-8 pr-8 pb-4 pl-4 justify-between">
       <div className="flex flex-col gap-8 ">
         {ScrapTownNavRoutes.topSection.map(({ title, icon, url }) => (
           <ScrapTownNavItem
@@ -53,11 +53,11 @@ const ScrapTownNavItem = ({
       <div className="flex gap-2 w-full cursor-pointer">
         <div
           className={`${
-            activeNav === "Home" ? "bg-white" : "bg-black"
-          } h-full w-[2px] rounded-full `}
+            activeNav === "Home" ? "block" : "hidden"
+          } h-full w-[2px] rounded-full bg-white`}
         />
         <img src={icon} alt="" />
-        <p className=" font-semibold text-xl text-white">{title}</p>
+        <p className=" font-semibold text-xl text-white font-outfit">{title}</p>
       </div>
     </Link>
   );

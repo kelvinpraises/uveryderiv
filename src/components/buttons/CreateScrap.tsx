@@ -1,8 +1,12 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+interface ICreateScrap {
+  openCreate: () => void;
+  openState: boolean;
+}
 
-const CreateScrap = () => {
+const CreateScrap: React.FC<ICreateScrap> = ({ openCreate, openState }) => {
   const router = useRouter();
   const pathname = usePathname();
   const pathSplit = pathname?.split("/") || [];
@@ -10,11 +14,11 @@ const CreateScrap = () => {
 
   return (
     <button
-      onMouseEnter={() => router.prefetch(pathname + "/create")}
-      onClick={() => router?.push(pathname + "/create")}
-      className=" bg-black py-3 px-[18px] text-white text-sm rounded-lg"
+      // onMouseEnter={() => router.prefetch(pathname + "/create")}
+      onClick={openCreate}
+      className=" bg-black py-3 px-[18px] text-white text-sm rounded-3xl"
     >
-      New Scrap
+      {openState ? "Post Scrap" : "New Scrap"}
     </button>
   );
 };

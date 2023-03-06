@@ -3,7 +3,7 @@ import ConnectWallet from "../buttons/ConnectWallet";
 
 const MainNav = () => {
   return (
-    <div className=" w-full flex justify-between px-6 py-5 bg-white fixed z-10">
+    <div className=" w-full flex justify-between px-6 py-5 bg-white fixed z-10 top-0">
       <Link href={"/"}>
         <img src="/logo.svg" alt="uveryderiv logo" />
       </Link>

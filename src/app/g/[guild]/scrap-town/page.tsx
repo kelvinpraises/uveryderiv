@@ -1,11 +1,10 @@
-import CreateScrap from "@/components/buttons/CreateScrap";
 import ScrapTownCard from "@/components/cards/ScrapTownCard";
-import CreateScrapComp from "@/components/CreateScrapComp";
+import CreateScrap from "@/components/CreateScrap";
 
 export default function Page() {
   return (
     <div className=" pb-32 flex flex-col gap-8">
-      <CreateScrapComp />
+      <CreateScrap />
       <ScrapTownCard key={1} />
       <ScrapTownCard key={2} />
       <ScrapTownCard key={3} />

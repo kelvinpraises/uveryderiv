@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <>
       <head />
-      <body>
+      <body className="flex justify-center bg-[#EFF1F8]">
         <MainNav />
         <div className="pt-[8rem] max-w-[1228px] w-full ">
           <div>
@@ -45,8 +45,8 @@ export default function RootLayout({
               <Link scroll={true} href={`/g/${guildId}/scrap-town`}>
                 <p>Scrap town</p>
               </Link>
-              <Link scroll={true} href={`/g/${guildId}/market`}>
-                <p>Collectibles</p>
+              <Link scroll={true} href={`/g/${guildId}/collection`}>
+                <p>Collection</p>
               </Link>
               <Link scroll={true} href={`/g/${guildId}/guild`}>
                 <p>Guild</p>

@@ -22,7 +22,7 @@ const GuildCard = (guild: FeaturedGuilds) => {
         </div>
         <div className="p-4 bg-white max-h-[12rem] overflow-hidden rounded-r-lg rounded-l-lg">
           <p className=" text-2xl text-[#494949] font-bebas">{guild.name}</p>
-          <p className=" text-[#545B5E] pt-2">{guild.bio}</p>
+          <p className=" text-[#545B5E] pt-2 font-outfit">{guild.bio}</p>
         </div>
       </Link>
     </div>

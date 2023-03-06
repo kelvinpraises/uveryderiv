@@ -5,14 +5,15 @@ import NavBar from "@/components/navBar/NavBar";
 import PopularCard from "@/components/cards/PopularCard";
 import FAQ from "@/components/FAQ";
 import { featuredGuilds, PopularIssues } from "@/data/data";
+import MainNav from "@/components/navBar/MainNav";
 
 export default async function Home() {
   // const featuredGuilds = await useFeaturedGuilds();
 
   return (
     <div className=" pt-[8rem] pb-36 grid place-items-center">
+      <MainNav />
       <Cover src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2l0eSxuaWdodHx8fHx8fDE2Nzc4NjY4ODE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" />
-
       <div className=" max-w-[1228px] w-full mt-8 ">
         <NavBar>
           <p className=" text-[#2B6CB0] text-4xl leading-[43px] font-bebas">

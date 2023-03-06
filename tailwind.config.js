@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         inter: ['var(--font-inter)'],
         bebas: ['var(--font-bebas-neue)'],
+        outfit: ['var(--font-outfit)'],
       },
     },
   },

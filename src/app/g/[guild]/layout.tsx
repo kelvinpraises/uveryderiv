@@ -30,12 +30,12 @@ export default function RootLayout({
 
             <div className="flex flex-col items-center mt-4">
               <p className="font-bebas text-4xl">MIDJOURNEY</p>
-              <p className="text-xl">by kelvx</p>
+              <p className="text-xl font-outfit">by kelvx</p>
             </div>
           </div>
 
           <NavBar>
-            <div className="flex max-w-[29rem] w-full justify-between my-8 py-4 text-[#2B6CB0] font-semibold ">
+            <div className="flex max-w-[32rem] w-full justify-between my-8 py-4 text-[#2B6CB0] font-semibold font-outfit pr-4">
               <Link scroll={true} href={`/g/${guildId}/`}>
                 <p>#Issue</p>
               </Link>
@@ -46,7 +46,7 @@ export default function RootLayout({
                 <p>Scrap town</p>
               </Link>
               <Link scroll={true} href={`/g/${guildId}/market`}>
-                <p>Market</p>
+                <p>Collectibles</p>
               </Link>
               <Link scroll={true} href={`/g/${guildId}/guild`}>
                 <p>Guild</p>

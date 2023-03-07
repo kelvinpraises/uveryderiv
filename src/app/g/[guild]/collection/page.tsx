@@ -1,23 +1,14 @@
+import CollectionCard from "@/components/cards/CollectionCard";
 import IssueCards from "@/components/cards/IssueCards";
 import { ColumnPanel } from "@/components/Panel";
+import { collectionData } from "@/data/data";
 
 export default function Home() {
   return (
-    <ColumnPanel>
-      <div
-        // style={{
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   alignItems: "center",
-        //   justifyContent: "center",
-        //   padding: "32 0 0",
-        //   gap: 32,
-        // }}
-        className=" flex flex-col justify-center items-center gap-4 w-full p-8 text-xl text-[#4C505F] font-medium"
-      >
-        <p>We're working on this!</p>
-        <p>Guild market coming soon!</p>
-      </div>
-    </ColumnPanel>
+    <div className=" grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4">
+      {collectionData.map((data, i) => (
+        <CollectionCard {...data} key={i} />
+      ))}
+    </div>
   );
 }

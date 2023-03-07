@@ -244,3 +244,54 @@ export const collectionData = [
     price: "500",
   },
 ];
+
+export const squareData = [
+  {
+    avatar:
+      "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "Poetry",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
+    time: "05:00",
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "Viry",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
+    time: "05:00",
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "Celpas",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
+    time: "05:00",
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "Hack",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
+    time: "05:00",
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "Midj",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
+    time: "05:00",
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MjE4&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "glass",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
+    time: "05:00",
+  },
+];

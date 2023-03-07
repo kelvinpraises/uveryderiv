@@ -199,3 +199,48 @@ export const faqQuestions = [
   { title: "What are Guilds?", answer: "answer to question" },
   { title: "What are Issues?", answer: "answer to question" },
 ];
+
+export const collectionData = [
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Poetry living",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Virony",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Celpas",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Hack500",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Midjourney#1",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "My glass",
+    createdBy: "kelvx",
+    price: "500",
+  },
+];

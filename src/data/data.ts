@@ -389,3 +389,4 @@ export const GuildJoined = [
   },
   { createdBy: "me", guildName: "Poetry~", dateJoined: "Wed Feb 17 2016" },
 ];
+export const fairsaveUploadService = "https://extreme-crystalline-table.glitch.me/api/upload-image";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { FeaturedGuilds } from "@/hooks/getFirebaseData";
+import { FeaturedGuilds } from "@/hooks/database";
 
 const GuildCard = (guild: FeaturedGuilds) => {
   return (

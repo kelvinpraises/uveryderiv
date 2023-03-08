@@ -41,6 +41,17 @@ export const METAMASK_CHAIN_PARAMETERS: {
     rpcUrls: ["https://data-seed-prebsc-1-s1.binance.org:8545"],
     blockExplorerUrls: ["https://testnet.bscscan.com"],
   },
+  56: {
+    chainId: "0x38",
+    chainName: "Binance Smart Chain",
+    nativeCurrency: {
+      name: "Binance Chain Native Token",
+      symbol: "BNB",
+      decimals: 18,
+    },
+    rpcUrls: ["https://bsc-dataseed.binance.org"],
+    blockExplorerUrls: ["https://bscscan.com"],
+  },
   596: {
     chainId: "0x254",
     chainName: "Karura Testnet",
@@ -133,3 +144,5 @@ export const EVM_RPC_MAP = Object.entries(METAMASK_CHAIN_PARAMETERS).reduce(
   },
   {} as EvmRpcMap
 );
+
+

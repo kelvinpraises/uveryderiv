@@ -10,7 +10,7 @@ export default function Page() {
   const [encrypt, setEncrypt] = useState(false);
   return (
     <div className=" flex flex-col max-w-[48.5rem] w-full ">
-      <div className=" flex flex-col gap-8">
+      <div className=" flex flex-col gap-8 pb-40">
         {squareData.map((data, i) => (
           <SquareCard {...data} key={i} />
         ))}

@@ -1,5 +1,7 @@
-import MainNav from "@/components/navBar/MainNav";
-import { Inter, Bebas_Neue, Outfit } from "@next/font/google";
+"use client";
+
+import ModalContainer from "@/components/modals/ModalContainer";
+import { Bebas_Neue, Inter, Outfit } from "@next/font/google";
 // import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
 import "../styles/globals.css";
 
@@ -23,9 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={` ${bebas_neue.variable} ${outfit.variable} ${inter.className}`}>
+    <html
+      className={` ${bebas_neue.variable} ${outfit.variable} ${inter.className}`}
+    >
       <head />
       <body className="flex justify-center bg-[#EFF1F8]">
+        <ModalContainer />
         {children}
       </body>
     </html>

@@ -232,6 +232,62 @@ export const collectionData = [
   {
     cover:
       "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Poetry living",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Virony",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Celpas",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Hack500",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Poetry living",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Virony",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Celpas",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
+    nameOfNFT: "Hack500",
+    createdBy: "kelvx",
+    price: "500",
+  },
+  {
+    cover:
+      "https://img.freepik.com/free-vector/illustration-sunset-sky-with-clouds_33099-2387.jpg?w=2000&t=st=1676629061~exp=1676629661~hmac=ed666ab18cb36bc9641c9df65c8d77a45f510e04908b5a1948c07456b14f4577",
     nameOfNFT: "Midjourney#1",
     createdBy: "kelvx",
     price: "500",
@@ -294,4 +350,42 @@ export const squareData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fuga et pariatur! Sint quisquam eos quibusdam rerum quia provident, quidem in fuga eius eveniet...",
     time: "05:00",
   },
+];
+
+export const ContactListData = [
+  {
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "0xdklsioneji39094309jnkjdn",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "0xdklsioneji39094309jnkjdn",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "0xdklsioneji39094309jnkjdn",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "0xdklsioneji39094309jnkjdn",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YWJzdHJhY3R8fHx8fHwxNjc3ODY3MTcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+    name: "0xdklsioneji39094309jnkjdn",
+  },
+];
+
+export const GuildJoined = [
+  { createdBy: "me", guildName: "Midjourney", dateJoined: "Wed Feb 17 2016" },
+  {
+    createdBy: "not me",
+    guildName: "Dream Piper",
+    dateJoined: "Wed Feb 17 2016",
+  },
+  {
+    createdBy: "not me",
+    guildName: "Connected",
+    dateJoined: "Wed Feb 17 2016",
+  },
+  { createdBy: "me", guildName: "Poetry~", dateJoined: "Wed Feb 17 2016" },
 ];

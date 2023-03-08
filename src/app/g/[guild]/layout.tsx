@@ -44,7 +44,7 @@ export default function RootLayout({
               <p>Scrap town</p>
             </Link>
             <Link scroll={true} href={`/g/${guildId}/collection`}>
-              <p>Collection</p>
+              <p>Collections</p>
             </Link>
             <Link scroll={true} href={`/g/${guildId}/guild`}>
               <p>Guild</p>

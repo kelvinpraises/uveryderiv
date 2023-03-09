@@ -9,7 +9,7 @@ export interface FeaturedGuilds {
   id: string;
 }
 
-export async function useFeaturedGuilds() {
+export default async function () {
   const db = getFirestore(app);
 
   const docRef = doc(db, "uveryderivData", "guilds");

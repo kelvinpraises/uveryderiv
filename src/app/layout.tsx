@@ -1,8 +1,8 @@
 "use client";
 
-import ModalContainer from "@/components/modals/ModalContainer";
 import { Bebas_Neue, Inter, Outfit } from "@next/font/google";
-// import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
+
+import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
 import "../styles/globals.css";
 
 const bebas_neue = Bebas_Neue({
@@ -29,10 +29,9 @@ export default function RootLayout({
       className={` ${bebas_neue.variable} ${outfit.variable} ${inter.className}`}
     >
       <head />
-      <body className="flex justify-center bg-[#EFF1F8]">
-        {/* <ModalContainer /> */}
-        {children}
-      </body>
+      <EthereumWalletProvider>
+        <body className="flex justify-center bg-[#EFF1F8]">{children}</body>
+      </EthereumWalletProvider>
     </html>
   );
 }

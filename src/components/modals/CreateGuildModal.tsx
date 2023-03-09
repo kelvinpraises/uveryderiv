@@ -61,7 +61,7 @@ const CreateGuildModal = () => {
           subheading={"The simple description of your guild"}
         />
 
-        <div className=" grid grid-cols-2">
+        <div className=" flex flex-col gap-2">
           <ImageInput type={"avatar"} />
           <ImageInput type={"coverImage"} />
         </div>

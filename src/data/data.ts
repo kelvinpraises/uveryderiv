@@ -406,4 +406,12 @@ export const IssueBlog = {
   ],
 };
 
-export const fairsaveUploadService = "https://extreme-crystalline-table.glitch.me/api/upload-image";
+export const fairsaveUploadService =
+  "https://extreme-crystalline-table.glitch.me/api/upload-image";
+
+export const GuildMemberData = [
+  { walletAddress: "0xc90ejikdo90eujsd09eoe9ewe", date: "29th of March, 2020" },
+  { walletAddress: "0xc90ejikdo90eujsd09eoe9ewe", date: "29th of March, 2020" },
+  { walletAddress: "0xc90ejikdo90eujsd09eoe9ewe", date: "29th of March, 2020" },
+  { walletAddress: "0xc90ejikdo90eujsd09eoe9ewe", date: "29th of March, 2020" },
+];

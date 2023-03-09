@@ -57,7 +57,7 @@ const ModalContainer = () => {
   return (
     <div className=" fixed inset-0 bg-[rgba(0,0,0,0.5)] grid place-items-center z-20 overscroll-none">
       <div className="w-[65vw] h-[75vh] rounded-2xl bg-white overflow-hidden overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-        <div className="bg-[#EFF1F8] w-[65vw] flex justify-between items-center h-[70px] rounded-t-2xl px-4 fixed">
+        <div className="bg-[#EFF1F8] w-[65vw] flex justify-between items-center h-[70px] rounded-t-2xl px-4 fixed z-10">
           <button>
             <img
               src="/back.svg"

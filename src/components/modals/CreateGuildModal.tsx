@@ -5,6 +5,7 @@ import { useCCProfile } from "@/hooks/profile";
 import { useSubscribe } from "@/hooks/subscribe";
 import { useStore } from "@/store/useStore";
 import Image from "next/image";
+import GenericButton from "../buttons/GenericButton";
 import ImageInput from "../Inputs/ImageInput";
 
 const CreateGuildModal = () => {
@@ -18,8 +19,8 @@ const CreateGuildModal = () => {
   const { createSubscription } = useSubscribe();
 
   return (
-    <>
-      <div>
+    <div className=" w-full mt-[70px] p-8 flex gap-8 ">
+      <div className=" w-[50%] overflow-y-scroll flex flex-col gap-4">
         <TextInput
           name="handle"
           onChange={(e) => {
@@ -60,13 +61,17 @@ const CreateGuildModal = () => {
           subheading={"The simple description of your guild"}
         />
 
-        <ImageInput type={"avatar"} />
-        <ImageInput type={"coverImage"} />
+        <div className=" grid grid-cols-2">
+          <ImageInput type={"avatar"} />
+          <ImageInput type={"coverImage"} />
+        </div>
 
-        <button onClick={() => {}}>Save Profile</button>
+        <div className=" flex justify-end mt-6 pt-6 border-t border-[#b3b3b3]">
+          <GenericButton buttonText="Save Profile" />
+        </div>
       </div>
-      <div>
-        <div className="max-w-[9rem] w-full h-36 grid place-items-center relative z-[1] overflow-hidden mr-[1.4rem] rounded-[20px] bg-[#717171]">
+      <div className=" w-[50%] flex flex-col items-center h-min">
+        <div className=" min-w-[9rem] w-full h-36 grid place-items-center relative z-[1] overflow-hidden  rounded-[20px] bg-[#3b3a3a]">
           {coverImageFile && (
             <Image
               src={coverImageFile || ""}
@@ -77,7 +82,7 @@ const CreateGuildModal = () => {
             />
           )}
         </div>
-        <div className="max-w-[9rem] w-full h-36 grid place-items-center relative z-[1] overflow-hidden mr-[1.4rem] rounded-[50%] bg-[#717171]">
+        <div className="max-w-[9rem] mt-[-4.5rem] w-full border-2 border-[#EFF1F8] h-36 grid place-items-center relative z-[1] overflow-hidden rounded-[50%] bg-[#717171]">
           {avatarFile ? (
             <Image
               src={avatarFile || ""}
@@ -90,8 +95,13 @@ const CreateGuildModal = () => {
             <img src="/profile.svg" alt="" />
           )}
         </div>
+        <p className="font-bebas text-3xl mt-2">{input["handle"]}</p>
+        <p className="text-xl font-outfit">{input["display_name"]}</p>
+        <div className=" w-full flex ">
+          <p> {input["bio"]} </p>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

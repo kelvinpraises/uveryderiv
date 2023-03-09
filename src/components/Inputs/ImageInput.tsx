@@ -64,10 +64,10 @@ const ImageInput = ({ type }: { type: "avatar" | "coverImage" }) => {
   }, [imgData]);
 
   return (
-    <div className="flex items-center w-fit;" {...getRootProps()}>
+    <div className="flex items-center w-fit" {...getRootProps()}>
       <input {...getInputProps()} />
       <button
-        className="cursor-pointer grid place-items-center text-[white] h-8 bg-[green] font-semibold leading-5 text-[0.9rem] text-center transition-all duration-200 ease-[ease] select-none px-[22px] py-2.5 rounded-[20px] hover:bg-[green] active:bg-[green] disabled:bg-[green] disabled:opacity-70 disabled:cursor-default;"
+        className="cursor-pointer grid place-items-center text-[white] bg-green-600 font-semibold leading-5 text-[0.9rem] h-min transition-all duration-200 ease-[ease] select-none px-[22px] py-2.5 rounded-[20px] hover:bg-green-700 active:bg-green-800 disabled:bg-green-500 "
         onClick={open}
       >
         {(() => {

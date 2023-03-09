@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 import {
   ConnectType,
-  useEthereumProvider
+  useEthereumProvider,
 } from "@/contexts/EthereumWalletContext";
 import { loginGetMessage, loginVerify } from "@/services/cyberConnect";
 import { useStore } from "@/store/useStore";
@@ -30,6 +30,7 @@ export function useAvailableWallets() {
 export function useCyberConnectLogin() {
   const { signerAddress, provider } = useEthereumProvider();
   const setAccessToken = useStore((state) => state.setAccessToken);
+  const setLoginModal = useStore((state) => state.setLoginModal);
 
   const cyberConnectLogin = async () => {
     if (provider && provider.provider.request && signerAddress) {
@@ -49,6 +50,11 @@ export function useCyberConnectLogin() {
   };
 
   useEffect(() => {
-    signerAddress && cyberConnectLogin();
+    if (signerAddress) {
+      (async () => {
+        await cyberConnectLogin();
+        setLoginModal(false);
+      })();
+    }
   }, [signerAddress]);
 }

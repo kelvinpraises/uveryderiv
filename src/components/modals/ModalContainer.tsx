@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useStore } from "@/store/useStore";
+import { useEffect } from "react";
 import CollectionModal from "./CollectionModal";
 import GuildModal from "./GuildModal";
 import HomeModal from "./HomeModal";
 import MessageModal from "./MessageModal";
 
 const ModalContainer = () => {
-  const [modalSelected, setModalSelected] = useState("home");
+  const setProfileModal = useStore((state) => state.setProfileModal);
+
+  const openProfileModal = useStore((state) => state.openProfileModal);
+  const profileModalPage = useStore((state) => state.profileModalSection);
 
   const SelectedModal = () => {
-    switch (modalSelected) {
+    switch (profileModalPage) {
       case "home":
-        return <HomeModal setModalSelected={setModalSelected} />;
+        return <HomeModal />;
 
       case "message":
         return <MessageModal />;
@@ -22,32 +26,45 @@ const ModalContainer = () => {
         return <CollectionModal />;
 
       default:
-        return <HomeModal setModalSelected={setModalSelected} />;
+        return <HomeModal />;
     }
   };
 
+  useEffect(() => {
+    if (openProfileModal) {
+      document.body.style.overflowY = "hidden";
+    }
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  }, [openProfileModal]);
+
+  if (!openProfileModal) {
+    return null;
+  }
+
   return (
-    <div className=" fixed inset-0 bg-[rgba(0,0,0,0.5)] grid place-items-center z-20 ">
-      <div className=" w-[65vw] h-[75vh] rounded-2xl bg-white">
-        <>
-          <div className=" bg-[#EFF1F8] w-[65vw] flex justify-between items-center h-[70px] fixed rounded-t-2xl px-4">
-            <div className=" flex gap-6 items-center">
-              <img
-                src="/back.svg"
-                alt=""
-                className=" h-[30px]"
-                onClick={() => setModalSelected("home")}
-              />
-              <p className=" capitalize font-outfit text-lg w-min whitespace-nowrap">
-                {modalSelected}
-              </p>
-            </div>
-            <div className=" flex justify-end w-full">
-              <img src="/close.svg" alt="" className=" h-[30px]" />
-            </div>
-          </div>
-          {SelectedModal()}
-        </>
+    <div className=" fixed inset-0 bg-[rgba(0,0,0,0.5)] grid place-items-center z-20 overscroll-none">
+      <div className="w-[65vw] h-[75vh] rounded-2xl bg-white overflow-hidden overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+        <div className="bg-[#EFF1F8] w-[65vw] flex justify-between items-center h-[70px] rounded-t-2xl px-4 fixed">
+          <button>
+            <img
+              src="/back.svg"
+              alt=""
+              className=" h-[30px]"
+              onClick={() => setProfileModal({ modalSection: "home" })}
+            />
+          </button>
+          <button>
+            <img
+              src="/close.svg"
+              alt=""
+              className=" h-[30px]"
+              onClick={() => setProfileModal({ open: false })}
+            />
+          </button>
+        </div>
+        {SelectedModal()}
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import { Bebas_Neue, Inter, Outfit } from "@next/font/google";
 
 import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
 import "../styles/globals.css";
+import ModalContainer from "@/components/modals/ModalContainer";
+import LoginModal from "@/components/modals/LoginModal";
 
 const bebas_neue = Bebas_Neue({
   subsets: ["latin"],
@@ -31,6 +33,8 @@ export default function RootLayout({
       <head />
       <EthereumWalletProvider>
         <body className="flex justify-center bg-[#EFF1F8]">{children}</body>
+        <ModalContainer />
+        <LoginModal />
       </EthereumWalletProvider>
     </html>
   );

@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import createAccessTokenSlice from "./createAccessTokenSlice";
+import createModalSlice from "./createModalSlice";
 import createProfileEditSlice from "./createProfileEditSlice";
 
 type StateFromFunctions<T extends [...any]> = T extends [infer F, ...infer R]
@@ -10,7 +11,11 @@ type StateFromFunctions<T extends [...any]> = T extends [infer F, ...infer R]
   : unknown;
 
 type State = StateFromFunctions<
-  [typeof createAccessTokenSlice, typeof createProfileEditSlice]
+  [
+    typeof createAccessTokenSlice,
+    typeof createProfileEditSlice,
+    typeof createModalSlice
+  ]
 >;
 
 export const useStore = create<State>()(
@@ -18,6 +23,7 @@ export const useStore = create<State>()(
     (set, get, store) => ({
       ...createAccessTokenSlice(set, get, store),
       ...createProfileEditSlice(set, get, store),
+      ...createModalSlice(set, get, store),
     }),
     { name: "uveryderiv" }
   )

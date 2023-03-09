@@ -78,7 +78,7 @@ export const EthereumWalletProvider = ({ children }: { children: any }) => {
           connections.push({
             connectType: ConnectType.METAMASK,
             name: "MetaMask",
-            icon: "/icons/metamask-fox.svg",
+            icon: "/metamask-fox.svg",
           });
         }
       } catch (error) {
@@ -87,7 +87,7 @@ export const EthereumWalletProvider = ({ children }: { children: any }) => {
       connections.push({
         connectType: ConnectType.WALLETCONNECT,
         name: "Wallet Connect",
-        icon: "/icons/walletconnect.svg",
+        icon: "/walletconnect.svg",
       });
       if (!cancelled) {
         setAvailableConnections(connections);

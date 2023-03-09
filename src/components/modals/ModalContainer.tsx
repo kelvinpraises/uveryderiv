@@ -1,6 +1,8 @@
 import { useStore } from "@/store/useStore";
 import { useEffect } from "react";
 import CollectionModal from "./CollectionModal";
+import CreateGuildModal from "./CreateGuildModal";
+import CreateProfileModal from "./CreateProfileModal";
 import GuildModal from "./GuildModal";
 import HomeModal from "./HomeModal";
 import MessageModal from "./MessageModal";
@@ -10,6 +12,15 @@ const ModalContainer = () => {
 
   const openProfileModal = useStore((state) => state.openProfileModal);
   const profileModalPage = useStore((state) => state.profileModalSection);
+
+  useEffect(() => {
+    if (openProfileModal) {
+      document.body.style.overflowY = "hidden";
+    }
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  }, [openProfileModal]);
 
   const SelectedModal = () => {
     switch (profileModalPage) {
@@ -25,19 +36,19 @@ const ModalContainer = () => {
       case "collection":
         return <CollectionModal />;
 
+      case "collection":
+        return <CollectionModal />;
+
+      case "createGuild":
+        return <CreateGuildModal />;
+
+      case "createProfile":
+        return <CreateProfileModal />;
+
       default:
         return <HomeModal />;
     }
   };
-
-  useEffect(() => {
-    if (openProfileModal) {
-      document.body.style.overflowY = "hidden";
-    }
-    return () => {
-      document.body.style.overflowY = "auto";
-    };
-  }, [openProfileModal]);
 
   if (!openProfileModal) {
     return null;

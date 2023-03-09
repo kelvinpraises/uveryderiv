@@ -49,17 +49,9 @@ export function useCyberConnectLogin() {
     }
   };
 
-  const switchNetwork = async () => {
-    await provider?.provider?.request!({
-      method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x38" }], // BNB
-    });
-  };
-
   useEffect(() => {
     if (signerAddress) {
       (async () => {
-        await switchNetwork();
         await cyberConnectLogin();
         setLoginModal(false);
       })();

@@ -12,15 +12,15 @@ interface ProfileInput {
 export type ProfileInputFields = keyof ProfileInput;
 
 type State = {
-  avatarFile: File | null;
-  coverImageFile: File | null;
+  avatarFile: string | null;
+  coverImageFile: string | null;
 
   input: ProfileInput;
 };
 
 type Actions = {
-  setAvatar: (img: File) => void;
-  setCoverImage: (img: File) => void;
+  setAvatar: (img: string) => void;
+  setCoverImage: (img: string) => void;
 
   setInput: ({
     name,

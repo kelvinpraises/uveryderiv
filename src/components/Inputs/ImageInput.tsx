@@ -67,7 +67,7 @@ const ImageInput = ({ type }: { type: "avatar" | "coverImage" }) => {
     <div className="flex items-center w-fit" {...getRootProps()}>
       <input {...getInputProps()} />
       <button
-        className="cursor-pointer grid place-items-center text-[white] bg-green-600 font-semibold leading-5 text-[0.9rem] h-min transition-all duration-200 ease-[ease] select-none px-[22px] py-2.5 rounded-[20px] hover:bg-green-700 active:bg-green-800 disabled:bg-green-500 "
+        className="cursor-pointer grid min-w-min place-items-center text-[white] bg-green-600 font-semibold leading-5 text-[0.9rem] h-min transition-all duration-200 ease-[ease] select-none px-[20px] py-2.5 rounded-[20px] hover:bg-green-700 active:bg-green-800 disabled:bg-green-500 "
         onClick={open}
       >
         {(() => {
@@ -84,7 +84,7 @@ const ImageInput = ({ type }: { type: "avatar" | "coverImage" }) => {
         })()}
       </button>
       {percent && (
-        <p style={{ marginLeft: "1rem" }}>{"Uploaded" + percent + "%"}</p>
+        <p className=" ml-3 text-sm">{"Uploaded " + percent + "%"}</p>
       )}
     </div>
   );

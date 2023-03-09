@@ -7,7 +7,7 @@ interface AvatarProp {
 
 const Avatar = ({ src, alt = "" }: AvatarProp) => {
   return (
-    <div className="relative flex items-center justify-center w-40 h-40 overflow-hidden rounded-full  mt-[-5rem] z-[1]">
+    <div className=" relative flex items-center justify-center w-40 h-40 overflow-hidden rounded-full  mt-[-5rem] z-[1]">
       <Image
         {...{ src, alt }}
         style={{

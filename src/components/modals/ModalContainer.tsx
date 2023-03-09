@@ -31,12 +31,17 @@ const ModalContainer = () => {
       <div className=" w-[65vw] h-[75vh] rounded-2xl bg-white">
         <>
           <div className=" bg-[#EFF1F8] w-[65vw] flex justify-between items-center h-[70px] fixed rounded-t-2xl px-4">
-            <img
-              src="/back.svg"
-              alt=""
-              className=" h-[30px]"
-              onClick={() => setModalSelected("home")}
-            />
+            <div className=" flex gap-6 items-center">
+              <img
+                src="/back.svg"
+                alt=""
+                className=" h-[30px]"
+                onClick={() => setModalSelected("home")}
+              />
+              <p className=" capitalize font-outfit text-lg w-min whitespace-nowrap">
+                {modalSelected}
+              </p>
+            </div>
             <div className=" flex justify-end w-full">
               <img src="/close.svg" alt="" className=" h-[30px]" />
             </div>

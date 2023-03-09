@@ -30,7 +30,7 @@ export default function RootLayout({
     >
       <head />
       <body className="flex justify-center bg-[#EFF1F8]">
-        <ModalContainer />
+        {/* <ModalContainer /> */}
         {children}
       </body>
     </html>

@@ -10,7 +10,7 @@ export function useSubscribe() {
   // get profile id from state
   const { signerAddress, provider } = useEthereumProvider();
 
-  const createSubscription = async () => {
+  const subscribe = async () => {
     const profileId = await getProfileByHandle("dreampiper_io");
 
     if (
@@ -44,5 +44,5 @@ export function useSubscribe() {
     }
   };
 
-  return { createSubscription };
+  return { subscribe };
 }

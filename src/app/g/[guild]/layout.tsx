@@ -33,7 +33,7 @@ export default function RootLayout({
         </div>
 
         <NavBar>
-          <div className="flex max-w-[32rem] w-full justify-between my-8 py-4 text-[#2B6CB0] font-semibold font-outfit pr-4">
+          <div className="font-semibold text-xl leading-7 flex max-w-[32rem] w-full justify-between my-8 py-4 text-[#2B6CB0] font-semibold font-outfit pr-4 gap-4">
             <Link scroll={true} href={`/g/${guildId}/`}>
               <p>#Issue</p>
             </Link>
@@ -51,13 +51,17 @@ export default function RootLayout({
             </Link>
           </div>
 
-          <div className="flex max-w-[14rem] w-full justify-between py-4 text-[#2B6CB0] my-8 font-semibold px-4">
-            <Link scroll={true} href={`/admin`}>
+          <div className="font-semibold text-xl leading-7 flex py-4 text-[#2B6CB0] my-8 font-semibold font-outfit px-4 gap-4">
+            <Link scroll={true} href={`/g/${guildId}/admin`}>
               <p>Admin deck</p>
             </Link>
-            <Link scroll={true} href={`/settings`}>
-              <p>Settings</p>
-            </Link>
+
+            <button
+              onClick={() => {} /* subscribe */}
+              className="cursor-pointer"
+            >
+              Subscribe
+            </button>
           </div>
         </NavBar>
 

@@ -3,7 +3,7 @@ import IssueCards from "@/components/cards/IssueCards";
 import { ColumnPanel } from "@/components/Panel";
 import { GuildMemberData } from "@/data/data";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className=" flex max-w-[800px] w-full flex-col gap-16  pb-8">
       <div className=" flex flex-col gap-4">

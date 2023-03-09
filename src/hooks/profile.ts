@@ -2,7 +2,7 @@ import { useEthereumProvider } from "@/contexts/EthereumWalletContext";
 import {
   createCreateProfileTypedData,
   relay,
-  relayActionStatus,
+  relayActionStatus
 } from "@/services/cyberConnect";
 import { getProfileMetadata } from "@/services/pinata";
 import { useStore } from "@/store/useStore";
@@ -48,6 +48,7 @@ export function useCCProfile() {
       console.log(txn);
     } else {
       alert("The handle has been registered please use another one");
+      throw new Error("The handle has been registered please use another one");
     }
   };
 

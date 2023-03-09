@@ -85,3 +85,31 @@ interface EssenceMetadata {
   /* URL to the item on your site. */
   external_url?: string;
 }
+
+export interface Content {
+  title: string;
+  body: string;
+  author: string; // The ccProfile handle of the author
+}
+
+export type PublishResponse = {
+  status: Status;
+  contentID: string;
+  arweaveTxHash: string;
+  tsInServer: number;
+};
+
+export enum Status {
+  SUCCESS,
+  INVALID_PARAMS,
+  RATE_LIMITED,
+  HANDLE_NOT_FOUND,
+  CONTENT_NOT_FOUND,
+  TARGET_NOT_FOUND,
+  NOT_PROFILE_OWNER,
+  ALREADY_EXISTED,
+  INVALID_MESSAGE,
+  INVALID_SIGNATURE,
+  MESSAGE_EXPIRED,
+  INVALID_SIGNING_KEY,
+}

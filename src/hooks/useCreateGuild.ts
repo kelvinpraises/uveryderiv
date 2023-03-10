@@ -31,7 +31,7 @@ export default function () {
       });
 
       alert(
-        `Created Guild with with, guild contentID @ ${published.contentID}, and arweave transaction @ ${published.arweaveTxHash}`
+        `Created ${handle} guild with with, contentID @ ${published.contentID}, and arweave transaction @ ${published.arweaveTxHash}`
       );
       return true;
     } catch (error) {

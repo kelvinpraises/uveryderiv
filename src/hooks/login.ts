@@ -32,6 +32,14 @@ export function useCyberConnectLogin() {
   const setAccessToken = useStore((state) => state.setAccessToken);
   const setLoginModal = useStore((state) => state.setLoginModal);
 
+  const switchNetwork = async () => {
+    if (!provider?.provider.request) return;
+    await provider?.provider.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: "0x38" }], // BNB
+    });
+  };
+
   const cyberConnectLogin = async () => {
     if (provider && provider.provider.request && signerAddress) {
       const message = await loginGetMessage(signerAddress);
@@ -52,6 +60,7 @@ export function useCyberConnectLogin() {
   useEffect(() => {
     if (signerAddress) {
       (async () => {
+        await switchNetwork()
         await cyberConnectLogin();
         setLoginModal(false);
       })();

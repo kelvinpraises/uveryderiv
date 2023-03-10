@@ -68,9 +68,13 @@ const CreateGuildModal = () => {
         </div>
 
         <div className=" flex justify-end mt-6 pt-6 border-t border-[#b3b3b3]">
-          <GenericButton onClick={async () => {
-            await createGuild();
-          }} buttonText="Save Profile" />
+          <GenericButton
+            onClick={async () => {
+              await createGuild();
+            }}
+          >
+            Save Profile
+          </GenericButton>
         </div>
       </div>
       <div className=" w-[50%] flex flex-col items-center h-min">

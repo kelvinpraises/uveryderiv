@@ -1,5 +1,5 @@
-import { doc, getFirestore, setDoc } from "firebase/firestore";
 import { app } from "@/data/firebase";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
 
 export default async function ({
   handle,

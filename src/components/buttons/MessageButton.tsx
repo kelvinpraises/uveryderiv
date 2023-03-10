@@ -1,10 +1,13 @@
 import React from "react";
 
-const MessageButton = () => {
+const MessageButton = ({ onClick }: { onClick: any }) => {
   return (
-    <div className=" h-min bg-black px-[18px] py-3 rounded-3xl text-white grid place-items-center cursor-pointer">
+    <button
+      {...{ onClick }}
+      className=" h-min bg-black px-[18px] py-3 rounded-3xl text-white grid place-items-center cursor-pointer"
+    >
       Comment
-    </div>
+    </button>
   );
 };
 

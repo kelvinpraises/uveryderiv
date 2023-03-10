@@ -7,14 +7,35 @@ import Avatar from "@/components/Avatar";
 import Cover from "@/components/Cover";
 import MainNav from "@/components/navBar/MainNav";
 import NavBar from "@/components/navBar/NavBar";
+import useGuildData from "@/hooks/useGuildData";
+import { useEffect, useState } from "react";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({
+    avatar: "",
+    bio: "",
+    coverImage: "",
+    displayName: "",
+    address: "",
+  });
+
   const pathname = usePathname();
   const guildId = pathname?.split("/")[2] || ""; // FIXME: fragile
+
+  const { metaData } = useGuildData();
+
+  useEffect(() => {
+    (async () => {
+      const data = await metaData(guildId);
+      setData(data);
+    })();
+    setLoading(false);
+  }, [guildId, setLoading]); // adding metadata causes recursive calling issues
 
   return (
     <>
@@ -22,25 +43,25 @@ export default function RootLayout({
       <div className="pt-[8rem] max-w-[1228px] w-full ">
         <div>
           <div className="flex items-center flex-col">
-            <Cover src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2l0eSxuaWdodHx8fHx8fDE2Nzc4NjY4ODE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" />
-            <Avatar src="https://images.unsplash.com/photo-1553501586-b6b1070d8134?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3Nzg2NDA4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" />
+            <Cover src={data.coverImage || ""} />
+            <Avatar src={data.avatar || ""} />
           </div>
 
           <div className="flex flex-col items-center mt-4">
-            <p className="font-bebas text-4xl">MIDJOURNEY</p>
-            <p className="text-xl font-outfit">by kelvx</p>
+            <p className="font-bebas text-4xl">{data.displayName}</p>
+            <p className="text-xl font-outfit">by {data.address}</p>
           </div>
         </div>
 
         <NavBar>
-          <div className="flex max-w-[32rem] w-full justify-between my-8 py-4 text-[#2B6CB0] font-semibold font-outfit pr-4">
+          <div className="font-semibold text-xl leading-7 flex max-w-[32rem] w-full justify-between my-8 py-4 text-[#2B6CB0] font-semibold font-outfit pr-4 gap-4">
             <Link scroll={true} href={`/g/${guildId}/`}>
               <p>#Issue</p>
             </Link>
             <Link scroll={true} href={`/g/${guildId}/stage`}>
               <p>Stage</p>
             </Link>
-            <Link scroll={true} href={`/g/${guildId}/scrap-town`}>
+            <Link scroll={true} href={`/g/${guildId}/scrap-town/ideas`}>
               <p>Scrap town</p>
             </Link>
             <Link scroll={true} href={`/g/${guildId}/collection`}>
@@ -51,13 +72,17 @@ export default function RootLayout({
             </Link>
           </div>
 
-          <div className="flex max-w-[14rem] w-full justify-between py-4 text-[#2B6CB0] my-8 font-semibold px-4">
-            <Link scroll={true} href={`/admin`}>
+          <div className="font-semibold text-xl leading-7 flex py-4 text-[#2B6CB0] my-8 font-semibold font-outfit px-4 gap-4">
+            <Link scroll={true} href={`/g/${guildId}/admin`}>
               <p>Admin deck</p>
             </Link>
-            <Link scroll={true} href={`/settings`}>
-              <p>Settings</p>
-            </Link>
+
+            <button
+              onClick={() => {} /* subscribe */}
+              className="cursor-pointer"
+            >
+              Subscribe
+            </button>
           </div>
         </NavBar>
 

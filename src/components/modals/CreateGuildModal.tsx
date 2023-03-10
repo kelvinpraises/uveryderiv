@@ -3,6 +3,7 @@
 import { TextInput } from "@/components/Inputs/textInput";
 import { useCCProfile } from "@/hooks/profile";
 import { useSubscribe } from "@/hooks/subscribe";
+import useCreateGuild from "@/hooks/useCreateGuild";
 import { useStore } from "@/store/useStore";
 import Image from "next/image";
 import GenericButton from "../buttons/GenericButton";
@@ -16,7 +17,7 @@ const CreateGuildModal = () => {
   const coverImageFile = useStore((state) => state.coverImageFile);
 
   const { saveProfile } = useCCProfile();
-  const { createSubscription } = useSubscribe();
+  const { createGuild } = useCreateGuild();
 
   return (
     <div className=" w-full mt-[70px] p-8 flex gap-8 ">
@@ -67,7 +68,13 @@ const CreateGuildModal = () => {
         </div>
 
         <div className=" flex justify-end mt-6 pt-6 border-t border-[#b3b3b3]">
-          <GenericButton buttonText="Save Profile" />
+          <GenericButton
+            onClick={async () => {
+              await createGuild();
+            }}
+          >
+            Save Profile
+          </GenericButton>
         </div>
       </div>
       <div className=" w-[50%] flex flex-col items-center h-min">

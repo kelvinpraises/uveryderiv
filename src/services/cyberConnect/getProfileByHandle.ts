@@ -5,6 +5,16 @@ export default async function (handle: string) {
     query getProfileByHandle($handle: String!) {
       profileByHandle(handle: $handle) {
         profileID
+        metadataInfo {
+          avatar
+          bio
+          coverImage
+          displayName
+        }
+        owner {
+          address
+        }
+        isPrimary
       }
     }
   `;
@@ -16,7 +26,7 @@ export default async function (handle: string) {
   try {
     const data: any = await graphQLClient.request(query, variables);
     console.log(JSON.stringify(data, undefined, 2));
-    return data.profileByHandle.profileID;
+    return data.profileByHandle;
   } catch (error) {
     console.error(JSON.stringify(error, undefined, 2));
   }

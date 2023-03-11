@@ -60,10 +60,10 @@ export function useCyberConnectLogin() {
   useEffect(() => {
     if (signerAddress) {
       (async () => {
-        await switchNetwork()
+        await switchNetwork();
         await cyberConnectLogin();
         setLoginModal(false);
       })();
     }
-  }, [signerAddress]);
+  }, [signerAddress, cyberConnectLogin, setLoginModal, switchNetwork]);
 }

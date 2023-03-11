@@ -6,6 +6,7 @@ import { EthereumWalletProvider } from "@/contexts/EthereumWalletContext";
 import "../styles/globals.css";
 import ModalContainer from "@/components/modals/ModalContainer";
 import LoginModal from "@/components/modals/LoginModal";
+import ToastNotification from "@/components/ToastNotification";
 
 const bebas_neue = Bebas_Neue({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
     >
       <head />
       <EthereumWalletProvider>
+        <ToastNotification toastMessage={"Your changes are saved successfully"} type={"info"} />
         <body className="flex justify-center bg-[#EFF1F8]">{children}</body>
         <ModalContainer />
         <LoginModal />

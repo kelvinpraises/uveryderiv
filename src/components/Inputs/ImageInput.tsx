@@ -37,7 +37,7 @@ const ImageInput = ({ type }: { type: "avatar" | "coverImage" }) => {
           break;
       }
     }
-  }, [get?.response, setInput]);
+  }, [get?.response, setInput, type]);
 
   const percent = useMemo(() => {
     return get?.progress && (get.progress.loaded / get.progress.total) * 100;
@@ -61,7 +61,7 @@ const ImageInput = ({ type }: { type: "avatar" | "coverImage" }) => {
           break;
       }
     };
-  }, [imgData]);
+  }, [imgData, setAvatar, setCoverImage, type]);
 
   return (
     <div className="flex items-center w-fit" {...getRootProps()}>

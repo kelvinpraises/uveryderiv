@@ -41,7 +41,7 @@ const pages = () => {
           </p>
           {IssueBlog.nft.length ? (
             <h2 className=" font-outfit text-[22px] text-[#4C505F]">
-              Browse our NFT's collection
+              Browse our NFT&apos;s collection
             </h2>
           ) : (
             <></>
@@ -63,7 +63,10 @@ const pages = () => {
             {IssueBlog.nft.map((nft, i) => {
               if (i != 0) {
                 return (
-                  <div className=" w-full overflow-hidden  rounded-[20px] h-min  mb-4 ">
+                  <div
+                    key={nft}
+                    className=" w-full overflow-hidden  rounded-[20px] h-min  mb-4 "
+                  >
                     <img
                       src={nft}
                       key={i}

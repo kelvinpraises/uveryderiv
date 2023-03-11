@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import GenericButton from "@/components/buttons/GenericButton";
 import IssueCards from "@/components/cards/IssueCards";
@@ -43,9 +43,9 @@ export default function Home() {
       </div>
       <div className=" flex gap-8 justify-end items-center">
         <Link href={"/preview"}>
-        <GenericButton buttonText={"See Preview"}  />
+          <GenericButton>See Preview</GenericButton>
         </Link>
-        <GenericButton buttonText={"Save"} />
+        <GenericButton>Save</GenericButton>
       </div>
     </div>
   );

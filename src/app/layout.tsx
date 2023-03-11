@@ -33,7 +33,7 @@ export default function RootLayout({
     >
       <head />
       <EthereumWalletProvider>
-        <ToastNotification toastMessage={"Your changes are saved successfully"} type={"info"} />
+        {/* <ToastNotification toastMessage={"Your changes are saved successfully"} type={"info"} /> */}
         <body className="flex justify-center bg-[#EFF1F8]">{children}</body>
         <ModalContainer />
         <LoginModal />
